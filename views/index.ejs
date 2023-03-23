@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Solana Blockchain</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Transfer Tokens</h1>
+      <form>
+        <label for="recipient-public-key">Recipient public key:</label>
+        <input type="text" id="recipient-public-key" name="public-key" placeholder="Enter recipient public key">
+        
+        <label for="amount">Amount:</label>
+        <input type="text" id="amount" name="amount" placeholder="Enter amount">
+        
+        <label for="token">Select token:</label>
+        <select id="token" name="token">
+          <option value="SOL">Solana</option>
+          <option value="ETH">Ethereum</option>
+          <option value="USDT">Tether USD</option>
+        </select>
+        
+        <input type="button" onclick="submitForm(event)" value="Send Payment" id="submitButton">
+        <span id="message"></span>
+      </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/script.js"></script>
+  </body>
+</html>
