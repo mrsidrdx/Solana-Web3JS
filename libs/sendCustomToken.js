@@ -54,7 +54,7 @@ async function transferCustomToken(recipientPublicKeyString, amount, token) {
     // Connect to cluster
     const connection = new Connection(clusterApiUrl("devnet"), "confirmed");
 
-    // Generate a new wallet keypair and airdrop SOL
+    // Fetching my wallet from private key
     const senderPrivateKeyString = process.env.WALLET_SECRET_KEY;
     const senderPrivateKey = bs58.decode(senderPrivateKeyString);
     const fromWallet = Keypair.fromSecretKey(senderPrivateKey);
@@ -89,7 +89,7 @@ async function transferCustomToken(recipientPublicKeyString, amount, token) {
       toWallet
     );
 
-    // Transfer the new token to the "toTokenAccount" we just created
+    // Transfer the custom token to the "toTokenAccount" we just created
     const amountToTransfer = amount * Math.pow(10, tokenToDecimal[token]);
     signature = await transfer(
       connection,
